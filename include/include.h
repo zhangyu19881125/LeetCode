@@ -1,6 +1,11 @@
 #include <string>
 #include <iostream>
 #include <assert.h>
+#include <math.h>
+#include <unistd.h>
+#include <climits>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
