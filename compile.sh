@@ -11,9 +11,10 @@ fi
 idx=$1
 
 cppfile=$(find . -name "${idx}_*")
-exefile=$(echo $cppfile | cut -d '/' -f 3 | cut -d . -f 1)
-
+exefile=test
 echo g++ -o ./$exefile $cppfile
+echo
+
 g++ -o ./$exefile $cppfile
 
 exit 0

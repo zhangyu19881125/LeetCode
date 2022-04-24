@@ -4,7 +4,7 @@
 // 1   5 7    11 13    17 19
 // 2 4   8 10    14 16
 // 3     9       15
-
+// 首先给字符串分段, 每段长度是 2*nRow - 2
 #include "../include/include.h"
 
 string Convert(string s, int rows)
@@ -17,9 +17,9 @@ string Convert(string s, int rows)
     {
         for (int j = i; j < n; j += size)
         {
-            res += s[j];
-            int pos = j + size - i * 2;
-            // if (不是第一行且不是最后一行) res += s[pos];
+            res += s[j];  // 直接按行扫描
+            int pos = j + size - i * 2;  // 中间字符在原字符串中的位置
+            if (i != 0 && i != rows - 1 && pos < n) res += s[pos];  // 不是首尾两行再加上中间的字符
         }
     }
     return res;
@@ -27,7 +27,7 @@ string Convert(string s, int rows)
 
 int main()
 {
-    assert(Convert("PAYPALISHIRING", 3) == string("PAHNAPLSIIGYIR"));
-    assert(Convert("PAYPALISHIRING", 4) == string("PINALSIGYAHRPI"));
+    assert_equal<string>(Convert("PAYPALISHIRING", 3), string("PAHNAPLSIIGYIR"));
+    assert_equal<string>(Convert("PAYPALISHIRING", 4), string("PINALSIGYAHRPI"));
     return 0;
 }
