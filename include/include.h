@@ -6,6 +6,10 @@
 #include <climits>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unordered_map>
+#include <map>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
