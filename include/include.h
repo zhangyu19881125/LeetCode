@@ -10,6 +10,7 @@
 #include <map>
 #include <vector>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -18,3 +19,11 @@ static void assert_equal(const T& l, const T& r)
 {
     if (l != r) cout << l << " != " << r << endl;
 }
+
+template<typename T>
+struct ListNode
+{
+    ListNode* pre;
+    ListNode* next;
+    T value;
+};
