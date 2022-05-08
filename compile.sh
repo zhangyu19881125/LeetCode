@@ -15,7 +15,7 @@ exefile=test
 echo g++ -o ./$exefile $cppfile
 echo
 
-g++ --std=c++11 -o ./$exefile $cppfile
+g++ -g --std=c++11 -o ./$exefile $cppfile
 
 exit 0
 
