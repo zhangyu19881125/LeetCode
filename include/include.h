@@ -27,3 +27,11 @@ struct ListNode
     ListNode* next;
     T value;
 };
+
+template<typename T>
+struct TreeNode
+{
+    TreeNode* left;
+    TreeNode* right;
+    T value;
+};
