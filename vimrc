@@ -48,11 +48,11 @@ set smartcase
 set tags=./tags;tags
 set autochdir
 let mapleader = ";"
+map <Space> <c-f>
 map <c-d> <c-]>
-map <c-f> :tag /
+map <c-m> :tag /
 map <c-c> :ts<CR>
 
-map <c-m> :BufMRU<CR>
 map <c-j> :BufMRUPrev<CR>
 map <c-k> :BufMRUNext<CR>
 map J <c-j>
@@ -82,12 +82,17 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-let g:Lf_WindowHeight = 0.60
-map <Space> <c-f>
+let g:Lf_WindowPosition = 'popup'
+" let g:Lf_WindowHeight = 0.70
+let g:Lf_PopupHeight = 0.70
+let g:Lf_PopupWidth = 0.80
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+let g:Lf_PreviewInPopup = 1
 map <c-p> :LeaderfFile<CR>
 map <c-o> :LeaderfBuffer<CR>
 map <c-i> :LeaderfFunction<CR>
 map <c-u> :Leaderf rg 
+map <c-u> :<C-U><C-R>=printf("Leaderf rg -e %s ", expand("<cword>"))<CR><CR>
 map <c-n> :Leaderf --recall<CR>
 map <c-y> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
