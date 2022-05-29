@@ -4,6 +4,11 @@ set fenc=utf-8
 set termencoding=utf-8
 set noswapfile
 
+" set fold
+set foldmethod=indent
+set foldlevelstart=99
+map ff za
+
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 set backspace=indent,eol,start
@@ -60,6 +65,7 @@ map K <c-k>
 
 call plug#begin('~/.vim/plugged')
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'Yggdroot/indentLine'
 Plug 'universal-ctags/ctags'
 Plug 'mildred/vim-bufmru'
 " Plug 'vim-scripts/global-6.6.8'
@@ -84,8 +90,8 @@ autocmd BufReadPost *
 
 let g:Lf_WindowPosition = 'popup'
 " let g:Lf_WindowHeight = 0.70
-let g:Lf_PopupHeight = 0.70
-let g:Lf_PopupWidth = 0.80
+let g:Lf_PopupHeight = 0.7
+let g:Lf_PopupWidth = 0.8
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 let g:Lf_PreviewInPopup = 1
 map <c-p> :LeaderfFile<CR>
