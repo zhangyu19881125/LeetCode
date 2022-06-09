@@ -54,9 +54,10 @@ set tags=./tags;tags
 set autochdir
 let mapleader = ";"
 map <Space> <c-f>
-map <c-d> <c-]>
-map <c-m> :tag /
-map <c-c> :ts<CR>
+map <c-m> <c-]>
+map <c-n> *
+" map <c-m> :tag /
+" map <c-c> :ts<CR>
 
 map <c-j> :BufMRUPrev<CR>
 map <c-k> :BufMRUNext<CR>
@@ -88,18 +89,19 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-let g:Lf_WindowPosition = 'popup'
-" let g:Lf_WindowHeight = 0.70
-let g:Lf_PopupHeight = 0.7
-let g:Lf_PopupWidth = 0.8
+let g:Lf_WindowPosition = 'bottom'
+let g:Lf_WindowHeight = 0.7
+" let g:Lf_PopupHeight = 0.7
+" let g:Lf_PopupWidth = 0.8
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 let g:Lf_PreviewInPopup = 1
 map <c-p> :LeaderfFile<CR>
 map <c-o> :LeaderfBuffer<CR>
 map <c-i> :LeaderfFunction<CR>
 map <c-u> :Leaderf rg 
-map <c-u> :<C-U><C-R>=printf("Leaderf rg -e %s ", expand("<cword>"))<CR><CR>
-map <c-n> :Leaderf --recall<CR>
+" map <c-u> :<C-U><C-R>=printf("Leaderf rg -e %s ", expand("<cword>"))<CR><CR>
+map <c-u> :Leaderf rg 
+" map <c-n> :Leaderf --recall<CR>
 map <c-y> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 
